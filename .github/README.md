@@ -1,10 +1,12 @@
-# ![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) AzerothCore
+# ![AzerothCore 标志](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) AzerothCore
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![CodeFactor](https://www.codefactor.io/repository/github/azerothcore/azerothcore-wotlk/badge)](https://www.codefactor.io/repository/github/azerothcore/azerothcore-wotlk)
-[![Discord](https://img.shields.io/discord/217589275766685707?logo=discord&logoColor=white)](https://discord.gg/gkt4y2x "Our community hub on Discord")
+[![Discord](https://img.shields.io/discord/217589275766685707?logo=discord&logoColor=white)](https://discord.gg/gkt4y2x "Discord 社区")
 
-## Build Status
+## 构建状态
+
+以下徽章显示上游 AzerothCore 的构建状态。
 
 [![nopch-build](https://github.com/azerothcore/azerothcore-wotlk/actions/workflows/core-build-nopch.yml/badge.svg?branch=master)](https://github.com/azerothcore/azerothcore-wotlk/actions/workflows/core-build-nopch.yml?query=branch%3Amaster)
 [![pch-build](https://github.com/azerothcore/azerothcore-wotlk/actions/workflows/core-build-pch.yml/badge.svg?branch=master)](https://github.com/azerothcore/azerothcore-wotlk/actions/workflows/core-build-pch.yml?query=branch%3Amaster)
@@ -15,83 +17,83 @@
 [![tools-build](https://github.com/azerothcore/azerothcore-wotlk/actions/workflows/tools_build.yml/badge.svg?branch=master)](https://github.com/azerothcore/azerothcore-wotlk/actions/workflows/tools_build.yml?query=branch%3Amaster)
 [![dashboard-ci](https://github.com/azerothcore/azerothcore-wotlk/actions/workflows/dashboard-ci.yml/badge.svg?branch=master)](https://github.com/azerothcore/azerothcore-wotlk/actions/workflows/dashboard-ci.yml?query=branch%3Amaster)
 
-## Introduction
+## 项目简介
 
-AzerothCore is an open-source game server application and framework designed for hosting massively multiplayer online role-playing games (MMORPGs). It is based on the popular MMORPG World of Warcraft (WoW) and seeks to recreate the gameplay experience of the original game from patch 3.3.5a.
+AzerothCore 是一套用于搭建大型多人在线角色扮演游戏（MMORPG）的开源服务端程序和框架。
+项目以《魔兽世界》为基础，致力于还原《巫妖王之怒》3.3.5a 版本的游戏体验。
 
-The original code is based on MaNGOS, TrinityCore, and SunwellCore and has since then had extensive development to improve stability, in-game mechanics, and modularity to the game. AC has also grown into a community-driven project with a significant number of contributors and developers. It is written in C++ and provides a solid foundation for creating private servers that mimic the mechanics and behavior of the official WoW servers.
+项目的早期代码源自 MaNGOS、TrinityCore 和 SunwellCore。经过持续开发，AzerothCore 改善了服务端稳定性、游戏机制和模块化程度，
+也逐渐发展成由众多开发者和贡献者共同维护的社区项目。它使用 C++ 编写，可作为搭建模拟《魔兽世界》官方服务端行为的私有服务器的基础。
 
-## Philosophy
+## 项目理念
 
-Our main goal is to create a playable game server, offering a fully working in-game experience.
+我们的首要目标是打造可实际游玩的服务端，让各项游戏功能正常运转。
 
-Here are the main points we focus on:
+* **稳定性**。所有变更须通过持续集成（CI）检查，才能合并到上游 `master` 分支。
 
-* Stability
-  * We make sure all changes pass the CIs before being merged into the master branch.
+* **还原官方体验**。我们力求让游戏内容贴近暴雪原版，并对修复的准确性有较高要求。
 
-* Blizzlike content
-  * We strive to make all in-game content to be blizzlike. Therefore we have a high standard for fixes being made.
+* **易于定制**。通过[模块](#模块)即可定制游戏体验。
 
-* Customization
-  * It is easy to customize your experience using [modules](#modules).
+* **社区驱动**。开发者、贡献者和用户通过论坛、Discord 等平台协作、分享经验并互相提供支持。
 
-* Community driven
-  * AzerothCore has an active community of developers, contributors, and users who collaborate, share knowledge, and provide support through forums, Discord channels, and other communication platforms. 
+### 模块
 
-### Modules
+AzerothCore 采用模块化设计，开发者可以扩展和定制游戏，添加自定义功能、内容和玩法。
 
-AzerothCore is designed to be highly modular, allowing developers to extend and customize the game to suit their preferences or create unique gameplay experiences. This flexibility enables the addition of custom features, content, and modifications.
+社区已开发了许多模块，可在[模块目录](https://www.azerothcore.org/catalogue.html#/)中查找。
 
-We have a lot of modules already made by the community, many of which can be found in the [Module Catalogue](https://www.azerothcore.org/catalogue.html#/).
+## 安装
 
-## Installation
+在这个 CoA（Conquest of Azeroth）分支中，当 `Updates.AutoSetup` 创建空白世界数据库时，
+`worldserver` 和 `dbimport` 会从[世界数据库包](../apps/coa-world/README.md)导入初始数据。
 
-For this CoA fork, the worldserver and `dbimport` populate an empty world database from the
-[world database package](../apps/coa-world/README.md) when `Updates.AutoSetup` creates it.
+详细步骤请参阅 [AzerothCore 安装指南](http://www.azerothcore.org/wiki/installation)。
 
-Detailed installation instructions are available [here](http://www.azerothcore.org/wiki/installation).
+## 参与贡献
 
-## Contributing
+如果你想了解《魔兽世界》服务端的运行原理、MMORPG 的结构或游戏服务端模拟器的开发方式，
+也可以通过 AzerothCore 学习和练习 C++ 与 SQL。
 
-AzerothCore can also serve as a learning resource for aspiring developers who want to understand how WoW servers work, how MMORPGs are structured, how game server emulators are created, or to improve their C++ and SQL knowledge.
+有意参与项目的开发者可以查阅 [Wiki 贡献指南](https://www.azerothcore.org/wiki/contribute)。
 
-If you want to contribute to the project, you will find a lot of resources that will guide you in our [wiki](https://www.azerothcore.org/wiki/contribute).
+参与前也建议阅读[贡献者行为准则](https://github.com/azerothcore/azerothcore-wotlk/blob/master/.github/CODE_OF_CONDUCT.md)。
 
-We also recommend you read our [Contributor Covenant Code of Conduct](https://github.com/azerothcore/azerothcore-wotlk/blob/master/.github/CODE_OF_CONDUCT.md).
+欢迎加入 [Discord 服务器](https://discord.gg/gkt4y2x)。
 
-Feel free to join our [Discord server](https://discord.gg/gkt4y2x).
+🤖 如果你使用 AI 智能体参与 AzerothCore 开发，请先阅读 [AI 智能体开发指南](https://www.azerothcore.org/wiki/agentic-engineering)。
+本仓库的智能体规则见 [AGENTS.md](../AGENTS.md) 和 [.agents/rules/](../.agents/rules/)。
+各类任务的操作指南位于 [.agents/docs/](../.agents/docs/)，配置方法见 [.agents/README.md](../.agents/README.md)。
 
-🤖 If you use any AI agent to work on AzerothCore, please read our [AI Agentic Engineering guidelines](https://www.azerothcore.org/wiki/agentic-engineering).
-Agent instructions for this repo live in [AGENTS.md](../AGENTS.md) and [.agents/rules/](../.agents/rules/), with task-scoped guides in [.agents/docs/](../.agents/docs/); [.agents/README.md](../.agents/README.md) explains how to hook up your agent.
+欢迎点击「⭐ Star」，让更多 GitHub 用户发现这个项目。
 
-Click on the "⭐ Star" button to help us gain more visibility on GitHub!
+## 作者与贡献者
 
-## Authors & Contributors
+本项目于 2016 年基于 SunwellCore 创建。由于 SunwellCore 发布时未附带 Git 历史，
+项目的 Git 记录无法完整反映 2016 年以前的贡献。
 
-The project was born in 2016 based on SunwellCore. Unfortunately, SunwellCore was published without any git history, so on git there are no credits for all the contributors before 2016.
+详情请参阅 [AUTHORS 文件](https://github.com/azerothcore/azerothcore-wotlk/blob/master/AUTHORS)。
 
-You can check the [authors](https://github.com/azerothcore/azerothcore-wotlk/blob/master/AUTHORS) file for more details.
+## 相关链接
 
-## Important Links
+- [Doxygen 文档](https://www.azerothcore.org/pages/doxygen/index.html)
+- [官方网站](http://www.azerothcore.org/)
+- [AzerothCore 资源目录](http://www.azerothcore.org/catalogue.html "AzerothCore 模块、工具及其他资源")
+- [Discord 社区](https://discord.gg/gkt4y2x)
+- [Wiki](http://www.azerothcore.org/wiki "由 AzerothCore 创始人开发，便于查阅")
+- [GitHub 讨论区](https://github.com/azerothcore/azerothcore-wotlk/discussions/)
+- [Facebook 主页](https://www.facebook.com/AzerothCore/)
+- [LinkedIn 主页](https://www.linkedin.com/company/azerothcore/)
 
-- [Doxygen documentation](https://www.azerothcore.org/pages/doxygen/index.html)
-- [Website](http://www.azerothcore.org/)
-- [AzerothCore catalogue](http://www.azerothcore.org/catalogue.html  "Modules, tools, and other stuff for AzerothCore") (modules, tools, etc...)
-- [Our Discord server](https://discord.gg/gkt4y2x)
-- [Our wiki](http://www.azerothcore.org/wiki "Easy to use and developed by AzerothCore founder")
-- [Our forum](https://github.com/azerothcore/azerothcore-wotlk/discussions/)
-- [Our Facebook page](https://www.facebook.com/AzerothCore/)
-- [Our LinkedIn page](https://www.linkedin.com/company/azerothcore/)
+## 许可证
 
-## License
+AzerothCore 源代码依据 [GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) 发布。
 
-- The AzerothCore source code is released under the [GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+AzerothCore 属于独立的社区项目，与《魔兽世界》及暴雪娱乐均无隶属关系，也未获得其认可。AzerothCore 在任何情况下均不赞助或支持非法公开服务器。
+本项目可供测试和学习。使用本项目运行非法公开服务器属于使用者的个人决定。
 
-It's important to note that AzerothCore is not an official Blizzard Entertainment product, and it is not affiliated with or endorsed by World of Warcraft or Blizzard Entertainment. AzerothCore does not in any case sponsor nor support illegal public servers. If you use this project to run an illegal public server and not for testing and learning it is your own personal choice.
+## 特别鸣谢
 
-## Special thanks
+[JetBrains](https://www.jetbrains.com/?from=AzerothCore) 为 AzerothCore 开发者免费提供[开源项目许可证](https://www.jetbrains.com/community/opensource/)。
 
-[JetBrains](https://www.jetbrains.com/?from=AzerothCore) is providing free [open-source licenses](https://www.jetbrains.com/community/opensource/) to the AzerothCore developers.
-
-[![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSourceSupport)
+[![JetBrains 标志](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSourceSupport)
